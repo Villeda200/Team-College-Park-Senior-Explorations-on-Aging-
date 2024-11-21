@@ -8,6 +8,13 @@ nav {
     margin: 0;
     font-family: Arial, sans-serif;
   }
+  section {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+  }
+
 
   header {
     background: #f8f9fa;
@@ -34,4 +41,6 @@ nav {
     display: block;
     margin: 0 auto; /* Center label images horizontally */
   }
+  
+
   
