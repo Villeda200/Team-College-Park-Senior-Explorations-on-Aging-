@@ -7,5 +7,10 @@ cd ..
 
 cd client
 npm install
+cd ..
+
+cd backend
+npm start
+
 
 
