@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pantry Filter</title>
+    <link rel="stylesheet" href="../src/Pantries.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 20px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: #f9f9f9;
+      }
+
+      nav {
+        background: #007bff;
+        padding: 10px;
+        color: hsl(0, 0%, 6%);
+      }
+
+      nav .menu a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      nav .menu a:hover {
+        color: #ffcc00;
+        transition: color 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#" class="brand">
+        <img class="logo" src="./logo192.png" />
+        <span>Insert Text Here?</span>
+      </a>
+
+      <!-- responsive-->
+      <input id="bmenub" type="checkbox" class="show" />
+      <label for="bmenub" class="burger pseudo button">menu</label>
+      <div class="menu">
+        <a href="/static-pages/index.html">Home</a>
+        <a href="/static-pages/organizations.html">Organizations</a>
+        <a href="/static-pages/map.html">Map</a>
+      </div>
+    </nav>
+    <div class="pantries-container">
+      <h1 class="pantries-title">Pantry Filter</h1>
+      <form id="filterForm" class="filter-form">
+        <div class="form-group">
+          <label for="dayFilter">Day:</label>
+          <select id="dayFilter" name="dayFilter">
+            <option value="">-- Select Day --</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="openTimeFilter">Open Time:</label>
+          <select id="openTimeFilter" name="openTimeFilter">
+            <option value="">-- Select Open Time --</option>
+            <option value="06:00:00">6:00 AM</option>
+            <option value="08:00:00">8:00 AM</option>
+            <option value="09:00:00">9:00 AM</option>
+            <option value="10:00:00">10:00 AM</option>
+            <option value="12:00:00">12:00 PM</option>
+            <option value="14:00:00">2:00 PM</option>
+            <option value="16:00:00">4:00 PM</option>
+            <option value="18:00:00">6:00 PM</option>
+            <option value="20:00:00">8:00 PM</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="closeTimeFilter">Close Time:</label>
+          <select id="closeTimeFilter" name="closeTimeFilter">
+            <option value="">-- Select Close Time --</option>
+            <option value="10:00:00">10:00 AM</option>
+            <option value="12:00:00">12:00 PM</option>
+            <option value="14:00:00">2:00 PM</option>
+            <option value="16:00:00">4:00 PM</option>
+            <option value="18:00:00">6:00 PM</option>
+            <option value="20:00:00">8:00 PM</option>
+            <option value="22:00:00">10:00 PM</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="zipCodeFilter">Zip Code:</label>
+          <input
+            type="text"
+            id="zipCodeFilter"
+            name="zipCodeFilter"
+            placeholder="Enter Zip Code"
+          />
+        </div>
+        <button type="submit">Apply Filters</button>
+      </form>
+      <table class="pantries-table">
+        <thead>
+          <tr>
+            <th>Organization Name</th>
+            <th>Day</th>
+            <th>Open Time</th>
+            <th>Close Time</th>
+            <th>Zip Code</th>
+          </tr>
+        </thead>
+        <tbody id="organizationTableBody">
+          <!-- Data will populate here -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="../public/scripts/tableScript.js"></script>
+  </body>
+</html>
