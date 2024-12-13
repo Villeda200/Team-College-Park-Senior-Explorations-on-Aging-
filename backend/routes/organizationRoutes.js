@@ -1,18 +1,18 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 // Route to fetch operating hours with optional filters
-router.get('/operating-hours', async (req, res) => {
+router.get("/operating-hours", async (req, res) => {
   const { DayOfWeek, OpeningTime, ClosingTime } = req.query; // Extract filters from query string
 
   try {
     // Start a Knex query
-    let query = req.db('organization_operating_hours').select('*');
+    let query = req.db("organization_operating_hours_zip").select("*");
 
     // Dynamically apply filters if they are provided
-    if (DayOfWeek) query = query.where('DayOfWeek', DayOfWeek);
-    if (OpeningTime) query = query.where('OpeningTime', '>=', OpeningTime);
-    if (ClosingTime) query = query.where('ClosingTime', '<=', ClosingTime);
+    if (DayOfWeek) query = query.where("DayOfWeek", DayOfWeek);
+    if (OpeningTime) query = query.where("OpeningTime", ">=", OpeningTime);
+    if (ClosingTime) query = query.where("ClosingTime", "<=", ClosingTime);
 
     // Execute the query
     const results = await query;
@@ -27,6 +27,3 @@ router.get('/operating-hours', async (req, res) => {
 });
 
 module.exports = router;
-
-
-
